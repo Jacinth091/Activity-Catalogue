@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="stylesheet" href="/css/Activity-Catalogue(CSS)/JS-Nested If.css">
+        <title>JS-Nested If</title>
+    </head>
+    <body>
+        <main class="webpage-view">
+            <header class="header-links">
+                <div class="header-cont">
+                    <div class="header-logo">
+                        <a href=""><img src="/assets/icon/catalogue.png" alt="Catalogue"></a>
+                        <a href=""><p>Catalogue</p></a>
+                    </div>
+                    <nav class="nav-links">
+                        <ul>
+                            <a href="#"><li>Home</li></a>
+                            <a href="#"><li>School</li></a>
+                            <a href="#"><li>Projects</li></a>
+                            <a href="#"><li>Activities</li></a>
+                            <a href="#"><li>About</li></a>
+                            <a href="#"><li>Socials</li></a>
+    
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main class="webpage-content">
+                <aside class="aside-nav-container">
+                    <div class="a-container">
+                        <div class="a-title">
+                            <p>Activity Catalogue</p>
+                        </div>
+                        <div class="a-contents">
+                            <div class="file-links">
+                                <ul>
+                                    <p>Javascript-Activity</p>
+                                    <a href="/html/Activity-Catalogue(HTML)/Integer-Calculator.html"><li>Integer-Calculator</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Simple-Input-form.html"><li>Simple Input Form</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Loop.html"><li>JS-Loop</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Nested If.html"><li>JS-Nested If</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Switch-Case.html"><li>JS-Switch Case</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Nested Loop.html"><li>JS-Nested Loop</li></a>
+                                    
+                                </ul>
+                                <ul>
+                                    <p>Js-Html-Css Activity</p>
+                                    <a href="/html/Activity-Catalogue(HTML)/Third Angle Finder.html"><li>Third Angle Finder</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Triangle Type Identifier.html"><li>Triangle Type Identifier</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Customer Electricity Bill.html"><li>Customer Electricity Bill</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Prime Numbers In a Range.html"><li>Prime Numbers in a Range</li></a>
+    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <section class="main-content-container">
+                    <div class="m-container">
+                        <div class="m-contents">
+                            <p>Simple Submit Validation Form</p>
+                            <form action="/submit_form" id="inputForm" class="inputForm" onsubmit="return validateForm()" method="post">
+                                <div class="userInput">
+                                    <label for="name">Enter Name: </label>
+                                    <input type="text" id="name" required>
+                                </div>
+                                <div class="userInput">
+                                    <label for="age">Enter Age: </label>
+                                    <input type="number" id="age" required>
+                                </div>
+                                
+                                <div class="calcButt">
+                                    <input type="submit" value="Submit">
+                                </div>  
+                            </form>
+                        </div>
+                        <div class="desc">
+                            <h1>Simple Submit Validation Form</h1>
+                            <div class="expl">
+                                Simple validation Submit Form that determines whether the "name" and "age" fields on a form are filled out. It also guarantees that the age is between 1 and 100. If everything is in order, you can submit; otherwise, it will inform you what needs to be fixed.
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+            </main>
+            <footer class="web-footer">
+                <div class="footer-contents">
+                    <i class='bx bx-copyright'></i>
+                    <p>Copyrighted By Jacinth 2023</p>
+                </div>
+            </footer>
+        </main>
+    </body>
+    <script>
+
+        function validateForm() {
+            var name = document.forms["inputForm"]["name"].value;
+            var age = document.forms["inputForm"]["age"].value;
+
+            if (name == "" && age == "") {
+                alert("Name and Age must be filled out!");
+                return false;
+
+            }
+            else {
+                if(isNaN(age) || age < 1 || age > 100) {
+                    alert("Age must between 1 and 100!");
+                    return false;
+                }
+                else {
+                    alert("Submission Successful!");
+                    return true;
+                }
+            }
+
+        }
+
+
+
+
+
+    </script>
+</html>

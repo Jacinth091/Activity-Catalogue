@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="stylesheet" href="css/Activity-Catalogue(CSS)/Integer-Calculator.css">
+        <script src="js/Javascript-Activity(WEBDEV)/integer-calculator.js"></script>        
+        <title>Integer-Calculator</title>
+    </head>
+    <body>
+        <main class="webpage-view">
+            <header class="header-links">
+                <div class="header-cont">
+                    <div class="header-logo">
+                        <a href=""><img src="/assets/icon/catalogue.png" alt="Catalogue"></a>
+                        <a href=""><p>Catalogue</p></a>
+                    </div>
+                    <nav class="nav-links">
+                        <ul>
+                            <a href="#"><li>Home</li></a>
+                            <a href="#"><li>School</li></a>
+                            <a href="#"><li>Projects</li></a>
+                            <a href="#"><li>Activities</li></a>
+                            <a href="#"><li>About</li></a>
+                            <a href="#"><li>Socials</li></a>
+    
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main class="webpage-content">
+                <aside class="aside-nav-container">
+                    <div class="a-container">
+                        <div class="a-title">
+                            <p>Activity Catalogue</p>
+                        </div>
+                        <div class="a-contents">
+                            <div class="file-links">
+                                <ul>
+                                    <p>Javascript-Activity</p>
+                                    <a href="/html/Activity-Catalogue(HTML)/Integer-Calculator.html"><li>Integer-Calculator</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Simple-Input-form.html"><li>Simple Input Form</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Loop.html"><li>JS-Loop</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Nested If.html"><li>JS-Nested If</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Switch-Case.html"><li>JS-Switch Case</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Nested Loop.html"><li>JS-Nested Loop</li></a>
+                                    
+                                </ul>
+                                <ul>
+                                    <p>Js-Html-Css Activity</p>
+                                    <a href="/html/Activity-Catalogue(HTML)/Third Angle Finder.html"><li>Third Angle Finder</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Triangle Type Identifier.html"><li>Triangle Type Identifier</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Customer Electricity Bill.html"><li>Customer Electricity Bill</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Prime Numbers In a Range.html"><li>Prime Numbers in a Range</li></a>
+    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <section class="main-content-container">
+                    <div class="m-container">
+                        <div class="m-contents">
+                            <p>Integer Calculator</p>
+                            <form action="#" id="inputForm" class="inputForm">
+                                <div class="userInput">
+                                    <label for="num1">Enter first number: </label> </label>
+                                    <input type="number" id="num1" required>
+                                </div>
+                                <div class="userInput">
+                                    <label for="num1">Operation: </label>
+                                    <select name="Operation" id="selectOp">
+                                        <option value="All" >ALL OPERATION</option>
+                                        <option value="+" >Addition</option>
+                                        <option value="-" >Subtraction</option>
+                                        <option value="*" >Multiplication</option>
+                                        <option value="/" >Division</option>
+                                        <option value="%" >Modulo</option>
+                                        <option value="Ave" >Average</option>
+            
+                                    </select>
+                                </div>
+                                <div class="userInput">
+                                    <label for="num2">Enter second nnumber: </label>
+                                    <input type="number" id="num2" required>
+                                </div>
+                                
+                                <div class="calcButt">
+                                    <button type="button" onclick="Calculate()">Calculate</button>
+                                </div>  
+                            </form>
+                        </div>
+                        <div class="left-content">
+                            <div class="result-container" id="res-cont">
+                                <p id="p-res">Result: </p>
+                                <span id="allop"></span>
+                                <div class="result" id="result">
+                                    <!-- <span id="sum" class="calcResult"></span>
+                                    <span id="differ" class="calcResult"></span>
+                                    <span id="prod" class="calcResult"></span>
+                                    <span id="quotient" class="calcResult"></span>
+                                    <span id="ave" class="calcResult"></span> -->
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <h1>Integer Calculator</h1>
+                                <div class="expl">
+    
+                                    It takes the value of the two numbers from the input html and then it will perform operations based on what operation the user selected, after calculating it will give back the result to the user.
+                                    <br> <br><b>(Addidtion, Subtraction, Multiplication, Division, Modulo, and Average) </b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+            </main>
+            <footer class="web-footer">
+                <div class="footer-contents">
+                    <i class='bx bx-copyright'></i>
+                    <p>Copyrighted By Jacinth 2023</p>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>

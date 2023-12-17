@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="stylesheet" href="/css/Activity-Catalogue(CSS)/Customer Electricity Bill.css">
+        <title>Customer Electricity Bill</title>
+    </head>
+    <body>
+        <main class="webpage-view">
+            <header class="header-links">
+                <div class="header-cont">
+                    <div class="header-logo">
+                        <a href=""><img src="/assets/icon/catalogue.png" alt="Catalogue"></a>
+                        <a href=""><p>Catalogue</p></a>
+                    </div>
+                    <nav class="nav-links">
+                        <ul>
+                            <a href="#"><li>Home</li></a>
+                            <a href="#"><li>School</li></a>
+                            <a href="#"><li>Projects</li></a>
+                            <a href="#"><li>Activities</li></a>
+                            <a href="#"><li>About</li></a>
+                            <a href="#"><li>Socials</li></a>
+    
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <main class="webpage-content">
+                <aside class="aside-nav-container">
+                    <div class="a-container">
+                        <div class="a-title">
+                            <p>Activity Catalogue</p>
+                        </div>
+                        <div class="a-contents">
+                            <div class="file-links">
+                                <ul>
+                                    <p>Javascript-Activity</p>
+                                    <a href="/html/Activity-Catalogue(HTML)/Integer-Calculator.html"><li>Integer-Calculator</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Simple-Input-form.html"><li>Simple Input Form</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Loop.html"><li>JS-Loop</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Nested If.html"><li>JS-Nested If</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Switch-Case.html"><li>JS-Switch Case</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/JS-Nested Loop.html"><li>JS-Nested Loop</li></a>
+                                    
+                                </ul>
+                                <ul>
+                                    <p>Js-Html-Css Activity</p>
+                                    <a href="/html/Activity-Catalogue(HTML)/Third Angle Finder.html"><li>Third Angle Finder</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Triangle Type Identifier.html"><li>Triangle Type Identifier</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Customer Electricity Bill.html"><li>Customer Electricity Bill</li></a>
+                                    <a href="/html/Activity-Catalogue(HTML)/Prime Numbers In a Range.html"><li>Prime Numbers in a Range</li></a>
+    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <section class="main-content-container">
+                    <div class="m-container">
+                        <div class="m-contents">
+                            <p>Customer Electricity Bill</p>
+                            <form action="#" id="inputForm" class="inputForm">
+                                <div class="userInput">
+                                    <label for="IDnumber">Customer ID NO:</label>
+                                    <input type="number" id="IDnumber" required>
+                                </div>
+                                <div class="userInput">
+                                    <label for="Username">Customer Name: </label>
+                                    <input type="text" id="Username" required>
+                                </div>
+                                <div class="userInput">
+                                    <label for="consumed">unit Consumed: </label>
+                                    <input type="number" id="consumed" required>
+                                </div>
+                                
+                                <div class="calcButt">
+                                    <button type="button" onclick="Print()">Print Bill</button>
+                                </div>  
+                            </form>
+                        </div>
+                        <div class="left-content">
+                            <div class="result-container" id="res-cont">
+                                <p>Your Electricity Bill:</p>
+                                <div class="result" id="result">
+                                    <table class="print-table">
+                                        <tr>
+                                            <th colspan="2">Customer Information</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer IDNO:</td>
+                                            <td><span id="id"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Customer Name:</td>
+                                            <td><span id="name"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>unit Consumed:</td>
+                                            <td><span id="unitCon"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Amount Audited</th>
+                                            <th>Total</th>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td><span id="amountCharges"></span></td>
+                                            <td><span id="Ac"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Surcharge Amount:</td>
+                                            <td><span id="sur"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Net Amount to be Paid by the Customer:</span></td>
+                                            <td><span id="net"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <h1>Printing Customer's Electricity Bill</h1>
+                                <div class="expl">
+                                    When the user enters and validates information, 
+                                    these functionalities compute power bill data, 
+                                    computing charges, and presenting the 
+                                    result when the user clicks "Print." 
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+            </main>
+            <footer class="web-footer">
+                <div class="footer-contents">
+                    <i class='bx bx-copyright'></i>
+                    <p>Copyrighted By Jacinth 2023</p>
+                </div>
+            </footer>
+        </main>
+    </body>
+    <script>
+
+    function Calculate(unitConsumed) {
+        const unitCharge = {
+            chOne: 1.20,
+            chTwo: 1.50,
+            chThree: 1.80,
+            chFour: 2.00
+        }
+        const SURCHARGE = .15;
+        let amountCharge = 0, amountSURCHARGE = 0, netAmount = 0, chargeRate = 0;
+
+        if ( unitConsumed <= 199) {amountCharge = unitConsumed * unitCharge.chOne;}
+        else if (unitConsumed >= 200 && unitConsumed < 400 ) { amountCharge = unitConsumed * unitCharge.chTwo;}
+        else if (unitConsumed >= 400 && unitConsumed < 600){
+            amountCharge = unitConsumed * unitCharge.chThree;
+            amountSURCHARGE = amountCharge * SURCHARGE;             // SURCHRAGE 
+        }
+        else {
+            amountCharge = unitConsumed * unitCharge.chFour;
+            amountSURCHARGE = amountCharge * SURCHARGE;             // SURCHRAGE 
+        }
+        
+        chargeRate = amountCharge / unitConsumed;
+        netAmount = amountCharge + amountSURCHARGE;
+        return [amountCharge, amountSURCHARGE, netAmount, chargeRate];
+    }
+
+    function Print() {
+        let userName = document.getElementById('Username').value;
+        let customerID = document.getElementById('IDnumber').value;
+        let unitConsumed = parseFloat(document.getElementById('consumed').value);
+
+        if (!userName || !customerID || isNaN(unitConsumed)) {
+            alert('Please input value on the specified fields.');
+            return;
+        }   
+        const [calcAmountCharge, calcAmountSurcharge, calcNetAmount, calcChargeRate] = Calculate(unitConsumed);
+        document.getElementById('res-cont').style.display = 'block';
+        
+        document.getElementById('id').textContent = customerID;
+        document.getElementById('name').textContent = userName;
+        document.getElementById('unitCon').textContent = unitConsumed;
+        document.getElementById('amountCharges').textContent = `Amount Charges @₱${calcChargeRate.toFixed(2)} per unit`;
+        document.getElementById('Ac').textContent = `₱ ${calcAmountCharge.toFixed(2)}`;
+        document.getElementById('sur').textContent = `₱ ${calcAmountSurcharge.toFixed(2)}`;
+        document.getElementById('net').textContent = `₱ ${calcNetAmount.toFixed(2)}`;
+    }
+
+
+    </script>
+</html>
